@@ -34,11 +34,6 @@ public class Example : MonoBehaviour
             gameObject.transform.forward = move;
         }
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                playerSpeed = playerSpeed = 10.0f;
-            }
-
           
 
         // Changes the height position of the player..

@@ -260,7 +260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd0bdf52a758d44492d9b0620a4e6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 2
 --- !u!54 &633481792
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -372,7 +371,7 @@ Transform:
   m_GameObject: {fileID: 633481790}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.97, y: 2.14, z: 7.27}
+  m_LocalPosition: {x: -4.97, y: 1.134, z: 7.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -390,16 +389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c2773475d57f146a331d37331e6404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num1: 0
-  num2: -385
-  num3: 178
-  num4: 8
-  num5: 0
-  num6: 3.14
-  num7: 3.79
-  isProgrammingHard: 1
-  chara: 97
-  frisk: I can write anything L bozo
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
