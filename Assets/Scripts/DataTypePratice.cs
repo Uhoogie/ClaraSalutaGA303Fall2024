@@ -27,8 +27,8 @@ public class NewBehaviourScript : MonoBehaviour //class declarion defines the cl
 
   
     //THESE ARE DATATYPES? NEXT TIME
-    public Light light;
-    public Transform transform;
+    //public Light light;
+    //public Transform transform;
 
     //DATA SIZES
     //1 byte = 8 bits

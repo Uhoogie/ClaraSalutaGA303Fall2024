@@ -18,7 +18,7 @@ public class Example : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Player Speed:" + playerSpeed);
+        
 
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
