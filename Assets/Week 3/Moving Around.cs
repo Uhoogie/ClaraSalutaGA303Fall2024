@@ -6,8 +6,8 @@ public class MovingAround : MonoBehaviour
 {
 
     //every object can acess transform and gameobject
-    public Transform cubeteleportpos;
-    public Transform cameratransform;
+    public Transform cubeteleportpos; //we use transform for the position of the object
+   // public Transform cameratransform;
     public float speed = 5f;
 
     void Start()
@@ -36,7 +36,9 @@ public class MovingAround : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            this.transform.position = cameratransform.position; //puts to the camera position
+
+            this.transform.position = Camera.main.transform.position; //acesses main camera based off of the tags
+          //  this.transform.position = cameratransform.position; //puts to the camera position
           //  this.transform.position += this.transform.forward; //makes it local forward +1
           //  this.transform.position += Vector3.forward; //makes it unviversal forward +1
             this.transform.position += this.transform.forward * speed; //if we wanna move it forward by more than 1 make a float variable
