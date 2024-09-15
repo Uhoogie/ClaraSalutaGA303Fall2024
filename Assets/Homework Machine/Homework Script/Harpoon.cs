@@ -11,12 +11,11 @@ public class Harpoon : MonoBehaviour
    void Update()
     {
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             GameObject go = Instantiate(HarpoonSpear, HarpoonSpawnLocation.position, HarpoonSpawnLocation.rotation);
-
-            //go.GetComponent<Rigidbody>().AddForce(go.transform.forward * HarpoonSpeed);
             go.GetComponent<Rigidbody>().AddForce(go.transform.up * HarpoonSpeed);
+            Debug.Log("WHY WOULD YOU PRESS THAT???");
         }
 
     }

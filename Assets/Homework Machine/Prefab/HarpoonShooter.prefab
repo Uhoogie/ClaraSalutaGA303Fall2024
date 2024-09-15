@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4090c2af9700434e8f90efdd25f3eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HarpoonSpear: {fileID: 0}
+  HarpoonSpear: {fileID: 4716795413874067418, guid: ca361173414ecff4ba0b847e7a04dceb, type: 3}
   HarpoonSpawnLocation: {fileID: 3577299458572662417}
   HarpoonSpeed: 10
 --- !u!1 &8713147896223406207
