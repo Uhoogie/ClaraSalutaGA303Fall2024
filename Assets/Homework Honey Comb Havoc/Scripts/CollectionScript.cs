@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class CollectionScript : MonoBehaviour
 {
-    public GameObject fruit1;
-    public GameObject fruit2;
-    public GameObject fruit3;
-    public GameObject fruit4;
-    public int counter = 0;
-
+    public ScoreManager counter;
     private void OnTriggerEnter(Collider other)
     {
-        if (tag == "Player")
+        if (other.tag == "Player")
         {
-            Destroy(gameObject);
-            counter++;
+            Debug.Log("Fruit!");
+            Destroy(this.gameObject);
+           // counter++;
         }
     }
 }

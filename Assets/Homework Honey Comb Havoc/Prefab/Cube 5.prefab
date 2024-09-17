@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3330157740683290949}
   - component: {fileID: 7362749764888656762}
   - component: {fileID: 4908950432827566696}
+  - component: {fileID: -7160248558188347285}
   m_Layer: 0
   m_Name: Cube 5
   m_TagString: Respawn
@@ -135,3 +136,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 10
   m_CollisionDetection: 0
+--- !u!114 &-7160248558188347285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000981368937445086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c499721867915549a7f8f1ac871c63c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0

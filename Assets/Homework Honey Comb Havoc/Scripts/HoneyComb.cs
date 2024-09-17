@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class HoneyComb : MonoBehaviour
 {
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Destroy") //had to use the tag to make the collision kill player assigned it to cube
+
+    public GameObject player;
+   
+         void OnTriggerEnter(Collider other)
         {
-            Destroy(gameObject); //what ever game object it's on get's destroyed
-        }
+            if (other.tag == "Destroy")
+            {
+                Debug.Log("BEES!");
+                Destroy(player);
+                // counter++;
+            }
     }
 }
