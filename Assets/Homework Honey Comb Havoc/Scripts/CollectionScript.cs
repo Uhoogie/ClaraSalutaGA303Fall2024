@@ -11,7 +11,6 @@ public class CollectionScript : MonoBehaviour
         {
             Debug.Log("Fruit!");
             Destroy(this.gameObject);
-           // counter++;
         }
     }
 }

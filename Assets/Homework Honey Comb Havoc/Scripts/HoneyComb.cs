@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class HoneyComb : MonoBehaviour
 {
-
-    public GameObject player;
    
-         void OnTriggerEnter(Collider other)
-        {
-            if (other.tag == "Destroy")
-            {
-                Debug.Log("BEES!");
-                Destroy(player);
-                // counter++;
-            }
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Touch");
+       
+        if (other.tag == "Destroy")
+         {
+           Debug.Log("BEES!");
+           Destroy(this.transform.parent.gameObject); 
+          }
     }
 }
