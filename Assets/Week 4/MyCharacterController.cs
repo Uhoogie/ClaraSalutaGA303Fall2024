@@ -11,6 +11,7 @@ public class MyCharacterController : MonoBehaviour
     public float playerSpeed = 5.0f;
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.18f; //uses gravity with the jump so the player doesn't go crazy
+    
 
     void Start()
     {
@@ -20,12 +21,30 @@ public class MyCharacterController : MonoBehaviour
 
     void Update()
     {
+        movementEffects();
         movementInputs();
 
     }
 
-    public void movementInputs() 
+    void movementEffects()
     {
+
+        //running
+        if (Input.GetButton("Run"))
+        {
+            playerSpeed = 10.0f;
+        }
+
+        else
+        {
+            playerSpeed = 5.0f;
+        }
+
+    }
+
+    void movementInputs() 
+    {
+
         groundedPlayer = controller.isGrounded;  //means that if the bool grounded player is true then the controller is grounded
 
         if (groundedPlayer && playerVelocity.y < 0)
@@ -41,11 +60,9 @@ public class MyCharacterController : MonoBehaviour
             gameObject.transform.forward = move; //moves the player
         }
 
-        if (Input.GetKeyDown("Jump") && groundedPlayer)
+        if (Input.GetButtonDown("Jump") && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue); //jump math and mathf.sqrt is a flloat of hypotenuse length so side * side + side * side
-
-
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime; //allows you to fall from gravity

@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Homework Machine/End of the World.unity
     guid: 822fc1676dcad8344901bd16f49a2e5c
+  - enabled: 1
+    path: Assets/Scenes/Week 4.unity
+    guid: 6317cc0e8fe489b4f8bda87e789cffce
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
