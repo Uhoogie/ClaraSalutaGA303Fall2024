@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class BlockerTimer : MonoBehaviour
 {
+    public TMP_Text uiText;
     public GameObject blocker;
     public bool blockerOn = true;
     public bool randomOdds = true;
@@ -26,11 +29,12 @@ public class BlockerTimer : MonoBehaviour
             blockerOn = false;
             Debug.Log("deactivate");
 
-            var randomNumber = Random.Range(0, 1);
+            var randomNumber = Random.Range(0, 2);
             if (randomNumber == 0)
             {
                 randomOdds = false;
                 Debug.Log("1");
+                uiText.text = "You Rolled a: 1";
                 StartCoroutine(WaitforBlocker());
             }
 
@@ -38,6 +42,7 @@ public class BlockerTimer : MonoBehaviour
             {
                 randomOdds = true;
                 Debug.Log("2");
+                uiText.text = "You Rolled a: 2";
                 StartCoroutine(WaitforBlocker2());
             }
 
@@ -56,7 +61,7 @@ IEnumerator WaitforBlocker()
     IEnumerator WaitforBlocker2()
     {
         Debug.Log("wait for blocker active");
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.65f);
         Debug.Log("times up");
         blockerOn = true;
     }
