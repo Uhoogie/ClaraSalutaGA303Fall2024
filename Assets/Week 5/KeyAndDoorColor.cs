@@ -18,19 +18,7 @@ public class KeyAndDoorColor : MonoBehaviour
     {
 
         var ColorManager = ObjectColors.Red;
-        switch (ColorManager)
-        { 
-            case ObjectColors.Red:
-                gameObject.GetComponent<MeshRenderer>().material.color = Color.red; 
-                break;
-
-            case ObjectColors.Yellow:
-                gameObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
-                break;
-
-            case ObjectColors.Green:
-                gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
-                break;
+        
 
         }
         }

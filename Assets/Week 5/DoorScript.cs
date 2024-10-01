@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
+
+    //doors not working cause it's not on the object and triggers needs to be changed
     public KeyScript Keycheck;
     public GameObject Door;
     public ObjectColors color;
