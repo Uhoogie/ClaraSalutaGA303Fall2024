@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KeyScript : MonoBehaviour
 {
+    public ObjectColors color;
+
 
     public bool hasKey = false;
         private void OnTriggerEnter(Collider other)

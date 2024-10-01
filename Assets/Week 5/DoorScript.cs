@@ -6,8 +6,9 @@ public class DoorScript : MonoBehaviour
 {
     public KeyScript Keycheck;
     public GameObject Door;
+    public ObjectColors color;
 
-    
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,7 +16,7 @@ public class DoorScript : MonoBehaviour
         Debug.Log("Oh a Door.");
         if (other.tag == "Player")
         {
-            if (Keycheck == false)
+            if (Keycheck.hasKey == false)
             {
                 Debug.Log("Door is Locked");
             }
