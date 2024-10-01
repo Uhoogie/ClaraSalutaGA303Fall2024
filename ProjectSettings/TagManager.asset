@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Destroy
   - Ground
+  - Red
+  - Green
+  - Yellow
   layers:
   - Default
   - TransparentFX
