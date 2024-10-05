@@ -16,12 +16,13 @@ public class KeyAndDoorColor : MonoBehaviour
 
     void Start()
     {
+        
 
-        var ColorManager = ObjectColors.Red;
+       // var ColorManager = ObjectColors.Red;
         
 
         }
-        }
+        
 
     // Update is called once per frame
     void Update()
