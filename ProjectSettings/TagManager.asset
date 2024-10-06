@@ -9,6 +9,7 @@ TagManager:
   - Red
   - Green
   - Yellow
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -10,24 +10,30 @@ public class DoorScript : MonoBehaviour
     public GameObject Door;
     public ObjectColors color;
 
+     public bool redDoor = false;
+    public bool greenDoor = false;
+    public bool yellowDoor = false;
 
 
-    private void OnTriggerEnter(Collider other)
+
+    private void Start()
     {
-
-        Debug.Log("Oh a Door.");
-        if (other.tag == "Player")
+        switch (color)
         {
-            if (Keycheck.hasKey == false)
-            {
-                Debug.Log("Door is Locked");
-            }
+            case ObjectColors.Red:
+                gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+                redDoor = true;
+                break;
 
-            else
-            {
-                Debug.Log("Door is Open");
-                Door.SetActive(false);
-            }
+            case ObjectColors.Yellow:
+                gameObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
+                yellowDoor = true;
+                break;
+
+            case ObjectColors.Green:
+                gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
+                greenDoor = true;
+                break;
         }
     }
 }
