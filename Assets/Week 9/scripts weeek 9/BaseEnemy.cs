@@ -1,14 +1,18 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour
 {
-    public float health = 100f;
-    public float speed = 3f;
-    public float attackDamage = 0f;
+    public float health = 100f; //health
+    public float speed = 3f; // speed
+    public float attackDamage = 0f; //attack damage
+    public float attackDistance = 5f; //range
+    public Transform playerdistance;
 
     private float timer = 0f;
+    public AudioSource audioSource;
 
     [SerializeField] protected float attackInterval = 1f;
 
@@ -18,21 +22,34 @@ public class BaseEnemy : MonoBehaviour
     protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerRPG>();
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-        timer += Time.deltaTime;
+        float distanceToPlayer = Vector3.Distance(transform.position, playerdistance.position);
 
-        if(timer >= attackInterval)
+        if (distanceToPlayer <= attackDistance)
         {
-            Attack();
-            timer = 0f;
-        }
-    }
+            Debug.Log("Player is in range");
+            timer += Time.deltaTime;
 
-    protected virtual void Attack()
+            if (timer >= attackInterval)
+            {
+                Attack();
+                audioSource.Play();
+                timer = 0f;
+            }
+        }
+        
+        else
+        { Debug.Log("Player is out of range"); }
+    }
+    
+
+protected virtual void Attack()
     {
         player.TakeDamage(attackDamage);
     }
@@ -52,5 +69,7 @@ public class BaseEnemy : MonoBehaviour
             Debug.Log("You killed it!");
             Destroy(this.gameObject);
         }
-    }
+
+     }
+    
 }

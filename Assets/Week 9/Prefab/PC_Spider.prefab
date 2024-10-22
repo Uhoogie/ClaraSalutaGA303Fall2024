@@ -112,6 +112,8 @@ MonoBehaviour:
   health: 10
   speed: 5
   attackDamage: 1
+  attackDistance: 3
+  playerdistance: {fileID: 0}
   attackInterval: 0.5
 --- !u!65 &4945206586877240658
 BoxCollider:

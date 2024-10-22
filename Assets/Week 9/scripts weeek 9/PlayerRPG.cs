@@ -12,6 +12,8 @@ public class PlayerRPG : MonoBehaviour
     private float timer;
     private bool isAttackReady = true;
 
+    public Text healthTrackerText;
+
     public Image attackReadyImage;
 
     // Start is called before the first frame update
@@ -23,7 +25,9 @@ public class PlayerRPG : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isAttackReady == false)
+        healthTracker();
+
+        if (isAttackReady == false)
         {
             timer += Time.deltaTime;
 
@@ -70,5 +74,10 @@ public class PlayerRPG : MonoBehaviour
         {
             Debug.Log("YOU DIED");
         }
+    }
+
+    public void healthTracker()
+    {
+        healthTrackerText.text = "HP: " + health;
     }
 }
