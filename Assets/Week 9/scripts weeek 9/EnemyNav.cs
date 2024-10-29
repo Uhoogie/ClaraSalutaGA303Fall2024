@@ -16,20 +16,20 @@ public class EnemyNav : MonoBehaviour
     void OnEnable()
     {
         Enemy = GetComponent<NavMeshAgent>();
-        player = FindFirstObjectByType<PlayerRpg>();
+        
 
         navAgent.SetDestination(patrolPoints[patrolIndex].position);
     }
 
     void Update()
     {
-        if (Vector3.Distance(this.transform.position, player.transform.position)) 
+        if (Vector3.Distance(this.transform.position, playerdistance.transform.position)) 
             { 
             
-            Vector3 direction = player.transform.position -this.transform.position).normalized;
+            Vector3 direction = player.transform.position - this.transform.position.normalized;
             RaycastHit hit;
 
-            if (Physics.Raycast(this.transform.position, direction, out hit, 8f)
+            if (Physics.Raycast(this.transform.position, direction, out hit, 8f))
                 {
                 if (hit.collider.tag == "Player");
                 }
