@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.38
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 48d9ba9c63325fd459d7b069d4a0211a, type: 2}
   m_BuildHeightMesh: 0
@@ -2504,7 +2504,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2513,9 +2513,24 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 0.63
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1160086836163596407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240445793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79135c2718b55d04da1b4e17a95006da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 1160086836163596406}
+  player: {fileID: 1299843746}
+  playerdistance: {fileID: 1299843755}
 --- !u!1001 &3569691875570666794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2666,6 +2681,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7003290410434115483, guid: 354e0f4185247054896f0d25d59496c9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1160086836163596406}
+    - targetCorrespondingSourceObject: {fileID: 7003290410434115483, guid: 354e0f4185247054896f0d25d59496c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1160086836163596407}
   m_SourcePrefab: {fileID: 100100000, guid: 354e0f4185247054896f0d25d59496c9, type: 3}
 --- !u!1001 &6746448986478401801
 PrefabInstance:

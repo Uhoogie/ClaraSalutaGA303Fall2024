@@ -23,6 +23,8 @@ public class PlayerRPG : MonoBehaviour
     public GameObject rangedProjectilePrefab;
     public Transform projectilespawnposision;
 
+    public bool isattackDamageBoosted = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,7 +75,15 @@ public class PlayerRPG : MonoBehaviour
 
         public void Attack(BaseEnemy enemy)
         {
-            enemy.TakeDamage(attackDamage);
+        float totalDamage = attackDamage;
+
+        if (isattackDamageBoosted == true)
+        {
+            totalDamage *= 1.1f;
+
+        }
+
+        enemy.TakeDamage(attackDamage);
             isAttackReady = false;
             attackReadyImage.gameObject.SetActive(isAttackReady);
         }
@@ -103,6 +113,12 @@ public class PlayerRPG : MonoBehaviour
             Destroy(go, .75f);
             }
         }
+
+    private IEnumerator waitAndRemoveAttackDamageBuff() 
+    {
+        yield return new WaitForSeconds(10f);
+        isattackDamageBoosted = false;
+    }
         
   
     } 

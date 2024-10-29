@@ -41,6 +41,7 @@ public class BaseEnemy : MonoBehaviour
                 audioSource.Play();
                 
             }
+
         }
         else
         { Debug.Log("Player is out of range");
