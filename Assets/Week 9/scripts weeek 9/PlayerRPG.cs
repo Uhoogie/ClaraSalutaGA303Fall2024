@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,10 +17,16 @@ public class PlayerRPG : MonoBehaviour
 
     public Image attackReadyImage;
 
+    public float rangedAttackDamage = 3f;
+    public int RangedAmmo = 3;
+    public int rangedProjectileForce = 1000;
+    public GameObject rangedProjectilePrefab;
+    public Transform projectilespawnposision;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -38,11 +45,11 @@ public class PlayerRPG : MonoBehaviour
                 timer = 0f;
             }
         }
-        
 
-        if(Input.GetMouseButtonDown(0))
+
+        if (Input.GetMouseButtonDown(0))
         {
-            if(isAttackReady == true)
+            if (isAttackReady == true)
             {
                 RaycastHit hit;
 
@@ -57,27 +64,47 @@ public class PlayerRPG : MonoBehaviour
                 }
             }
         }
-    }
 
-    public void Attack(BaseEnemy enemy)
-    {
-        enemy.TakeDamage(attackDamage);
-        isAttackReady = false;
-        attackReadyImage.gameObject.SetActive(isAttackReady);
-    }
+        if (Input.GetMouseButtonUp(1)) {
+            rangedAttack();
 
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-
-        if (health <= 0)
-        {
-            Debug.Log("YOU DIED");
         }
     }
 
-    public void healthTracker()
-    {
-        healthTrackerText.text = "HP: " + health;
-    }
-}
+        public void Attack(BaseEnemy enemy)
+        {
+            enemy.TakeDamage(attackDamage);
+            isAttackReady = false;
+            attackReadyImage.gameObject.SetActive(isAttackReady);
+        }
+
+        public void TakeDamage(float damage)
+        {
+            health -= damage;
+
+            if (health <= 0)
+            {
+                Debug.Log("YOU DIED");
+            }
+        }
+
+        public void healthTracker()
+        {
+            healthTrackerText.text = "HP: " + health;
+        }
+
+        public void rangedAttack()
+        {
+            if (RangedAmmo > 0) {
+                GameObject go = Instantiate(rangedProjectilePrefab, projectilespawnposision.position, projectilespawnposision.rotation);
+                go.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * rangedProjectileForce);
+
+            RangedAmmo--;
+            Destroy(go, .75f);
+            }
+        }
+        
+  
+    } 
+
+

@@ -34,24 +34,26 @@ public class BaseEnemy : MonoBehaviour
         if (distanceToPlayer <= attackDistance)
         {
             Debug.Log("Player is in range");
-            timer += Time.deltaTime;
-
+            timer += Time.deltaTime * 0.5f;
             if (timer >= attackInterval)
             {
                 Attack();
                 audioSource.Play();
-                timer = 0f;
+                
             }
         }
-        
         else
-        { Debug.Log("Player is out of range"); }
+        { Debug.Log("Player is out of range");
+        timer = 0f;
+        }
     }
     
-
+   
 protected virtual void Attack()
     {
+
         player.TakeDamage(attackDamage);
+        timer = 0f;
     }
 
     public virtual void Move()
@@ -71,5 +73,16 @@ protected virtual void Attack()
         }
 
      }
-    
+
+    protected virtual void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.tag == "projectile")
+        {
+
+            TakeDamage(player.rangedAttackDamage);
+
+            Destroy(other.gameObject);
+        }
+    }
+
 }

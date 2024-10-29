@@ -10,6 +10,8 @@ TagManager:
   - Green
   - Yellow
   - Door
+  - Bullet
+  - projectile
   layers:
   - Default
   - TransparentFX
