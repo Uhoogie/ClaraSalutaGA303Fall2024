@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoweUpScript : PlayerRPG
+public class PowerUpScript : MonoBehaviour
 {
-    public int healthup;
-    public int attackup;
-    public float speedup;
+ public int healthup = 20;
+    public int attackup = 5;
+    public float speedup = 0.2f;
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        PlayerRPG player = other.GetComponent<PlayerRPG>();
+        
+        if (player != null)
         {
-            health = health + healthup;
-            attackDamage = attackDamage + attackup;
-            attackInterval = attackInterval - speedup;
+            player.health += healthup;
+            player.attackDamage += attackup;
+            player.attackInterval -= speedup;
 
-            Debug.Log("Wow I feel strong!");
+            Debug.Log($"New Health: {player.health}, New Attack Damage: {player.attackDamage}, New Attack Interval: {player.attackInterval}");
+            Debug.Log("Wow, I feel strong!");
             Destroy(gameObject);
         }
     }

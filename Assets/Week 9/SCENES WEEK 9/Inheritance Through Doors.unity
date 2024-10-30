@@ -662,7 +662,7 @@ Transform:
   m_GameObject: {fileID: 403671061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: -2.07, z: 12.27}
+  m_LocalPosition: {x: 25.7, y: 0.2, z: 27.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -838,19 +838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b18e61582cb0ff40a685a3732c71572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  attackDamage: 5
-  attackInterval: 1
-  healthTrackerText: {fileID: 0}
-  attackReadyImage: {fileID: 0}
-  rangedAttackDamage: 3
-  RangedAmmo: 3
-  rangedProjectileForce: 1000
-  rangedProjectilePrefab: {fileID: 0}
-  projectilespawnposision: {fileID: 0}
-  isattackDamageBoosted: 0
   healthup: 20
-  attackup: 5
+  attackup: 2
   speedup: 0.2
 --- !u!65 &548258801
 BoxCollider:
@@ -965,7 +954,7 @@ Transform:
   m_GameObject: {fileID: 612181849}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1, y: -2.07, z: 9.53}
+  m_LocalPosition: {x: 8.01, y: 0.24, z: 14.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1336,20 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068335c299439894a9f5436143445037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  attackDamage: 5
-  attackInterval: 1
-  healthTrackerText: {fileID: 0}
-  attackReadyImage: {fileID: 0}
-  rangedAttackDamage: 3
-  RangedAmmo: 3
-  rangedProjectileForce: 1000
-  rangedProjectilePrefab: {fileID: 0}
-  projectilespawnposision: {fileID: 0}
-  isattackDamageBoosted: 0
-  healthup: 0
-  attackup: 3
-  speedup: 0
+  attackDamageUp: 3
 --- !u!65 &1046426605
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1910,20 +1886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3463805ce731f84393d1832db74fc65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  attackDamage: 5
-  attackInterval: 1
-  healthTrackerText: {fileID: 0}
-  attackReadyImage: {fileID: 0}
-  rangedAttackDamage: 3
-  RangedAmmo: 3
-  rangedProjectileForce: 1000
-  rangedProjectilePrefab: {fileID: 0}
-  projectilespawnposision: {fileID: 0}
-  isattackDamageBoosted: 0
-  healthup: 0
-  attackup: 0
-  speedup: 0.2
+  Speedup: 0.2
 --- !u!65 &1372979048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2175,20 +2138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce05a41bc07f944cbbcb7e1d9667850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  attackDamage: 5
-  attackInterval: 1
-  healthTrackerText: {fileID: 0}
-  attackReadyImage: {fileID: 0}
-  rangedAttackDamage: 3
-  RangedAmmo: 3
-  rangedProjectileForce: 1000
-  rangedProjectilePrefab: {fileID: 0}
-  projectilespawnposision: {fileID: 0}
-  isattackDamageBoosted: 0
-  healthup: 20
-  attackup: 0
-  speedup: 0
+  healthUp: 20
 --- !u!65 &1693796411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2550,7 +2500,7 @@ Transform:
   m_GameObject: {fileID: 2043359400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.52, y: -2.07, z: 16.9}
+  m_LocalPosition: {x: 24.39, y: 0.14, z: 14.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2652,6 +2602,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235ed1ddf1d5f9b4ea96135666c6b900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemy: {fileID: 2107624238}
+  player: {fileID: 1299843746}
+  playerdistance: {fileID: 1299843755}
+  navAgent: {fileID: 2107624238}
+  patrolPoints:
+  - {fileID: 2133699470}
+  - {fileID: 612181850}
+  - {fileID: 2043359401}
+  - {fileID: 403671062}
+  patrolIndex: 0
 --- !u!195 &2107624238
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2662,7 +2622,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 16.32
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2699,7 +2659,7 @@ Transform:
   m_GameObject: {fileID: 2133699469}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1, y: -2.07, z: 28.32}
+  m_LocalPosition: {x: 10.21, y: 0.13, z: 28.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
