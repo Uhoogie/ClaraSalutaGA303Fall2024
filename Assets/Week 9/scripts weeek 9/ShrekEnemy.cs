@@ -10,7 +10,9 @@ public class ShrekEnemy : BaseEnemy
     {
         base.Start();
 
-        Debug.Log("HeeHo I'm a slime!");
+        Debug.Log("SWAMP");
+
+        immuneprojectile = true;
     }
 
     // Update is called once per frame

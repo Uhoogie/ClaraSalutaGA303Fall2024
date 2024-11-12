@@ -13,6 +13,8 @@ public class BaseEnemy : MonoBehaviour
 
     private float timer = 0f;
     public AudioSource audioSource;
+    public AudioSource failaudio;
+    public bool immuneprojectile;
 
     [SerializeField] protected float attackInterval = 1f;
 
@@ -79,10 +81,19 @@ protected virtual void Attack()
     {
         if (other.collider.tag == "projectile")
         {
+            if (immuneprojectile = false)
+            {
+                TakeDamage(player.rangedAttackDamage);
 
-            TakeDamage(player.rangedAttackDamage);
-
-            Destroy(other.gameObject);
+                Destroy(other.gameObject);
+            }
+            else 
+            {
+                Debug.Log("Creature is immune to projectiles.");
+                failaudio.Play();
+                Destroy(other.gameObject);
+            }
+            
         }
     }
 
